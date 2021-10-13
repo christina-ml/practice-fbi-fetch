@@ -3,16 +3,61 @@ h3 {
 }
 
 div:nth-child(even) {
-    color: blue;
+    color: navy;
 }
 
 div:nth-child(odd) {
-    color: red;
+    color: mediumvioletred;
 }
 
-#title {
+h3 {
+    background-color: black;
+    padding: 20px;
     color: orange;
     font-size: 20px;
-    padding-top: 10px;
-    text-decoration: underline;
 }
+
+
+
+main {
+    text-align: left;
+}
+
+
+#title {
+    padding: 15px;
+    display: grid;
+    grid-template-areas:
+    "one one one five"
+    "two three four five";
+}
+
+#title #person-name {
+    text-align: center;
+    padding-bottom: 15px;
+    color:rebeccapurple;
+    background-color: thistle;
+    grid-area: one;
+}
+
+#title #eye-color {
+    grid-area: two;
+    background-color: steelblue;
+}
+
+#title #hair-color {
+    grid-area: three;
+    background-color: skyblue;
+}
+
+#title #race {
+    grid-area: four;
+    background-color: silver;
+}
+
+#title #image-here {
+    grid-area: five;
+    text-align: right;
+    background-color: wheat;
+}
+

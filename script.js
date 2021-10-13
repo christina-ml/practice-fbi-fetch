@@ -8,20 +8,32 @@ fetch("https://api.fbi.gov/wanted/v1/list")
         for (let wanted of wantedList){
             let title = document.createElement("div");
             title.id = "title";
-            title.textContent = `${wanted.title}`;
             mainSection.append(title);
-            
+
+            let personName = document.createElement("div");
+            personName.id = "person-name";
+            personName.textContent = `${wanted.title}`;
+            title.append(personName);
+
             let eyeColor = document.createElement("div");
+            eyeColor.id = "eye-color";
             eyeColor.textContent = `Eyes: ${wanted.eyes}` 
-            mainSection.append(eyeColor);
+            title.append(eyeColor);
 
             let hairColor = document.createElement("div");
+            hairColor.id = "hair-color";
             hairColor.textContent = `Hair: ${wanted.hair}` 
-            mainSection.append(hairColor);
+            title.append(hairColor);
         
             let race = document.createElement("div");
+            race.id = "race";
             race.textContent = `Race: ${wanted.race}` 
-            mainSection.append(race);
+            title.append(race);
+
+            let imageHere = document.createElement("div");
+            imageHere.id = "image-here";
+            imageHere.textContent = `image: ${wanted.image}` 
+            title.append(imageHere);
 
         }
     })
