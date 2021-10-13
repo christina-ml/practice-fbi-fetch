@@ -46,7 +46,12 @@ fetch("https://api.fbi.gov/wanted/v1/list")
                     emptyDiv.textContent = `WARNING: none`
                     emptyDiv.style.color = "black";
                 } else {
-                    emptyDiv.textContent = `WARNING: ${wanted.warning_message}`;
+                    if (wanted.reward_text === null){
+                        emptyDiv.textContent = `WARNING: ${wanted.warning_message}`;
+                    } else {
+                        window.alert(`REWARD: ${wanted.reward_text}`);
+                        emptyDiv.textContent = `WARNING: ${wanted.warning_message}`;
+                    }
                 }
             })
         }
