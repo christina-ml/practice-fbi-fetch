@@ -35,6 +35,20 @@ fetch("https://api.fbi.gov/wanted/v1/list")
             imageThumb.alt = wanted.images[0].caption;
             imageThumb.id = "image-thumb";
             title.append(imageThumb);
+
+            let emptyDiv = document.createElement("div");
+            emptyDiv.id = "empty-div";
+            title.append(emptyDiv);
+
+            /* Event listener on the picture */
+            imageThumb.addEventListener("click", (e)=>{
+                if (wanted.warning_message === null){
+                    emptyDiv.textContent = `WARNING: none`
+                    emptyDiv.style.color = "black";
+                } else {
+                    emptyDiv.textContent = `WARNING: ${wanted.warning_message}`;
+                }
+            })
         }
     })
     .catch((err)=>{

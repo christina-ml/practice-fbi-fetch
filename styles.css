@@ -1,5 +1,5 @@
 body {
-    /* background-color: black; */
+    background-color: black;
 }
 
 div:nth-child(even) {
@@ -7,7 +7,7 @@ div:nth-child(even) {
 }
 
 div:nth-child(odd) {
-    color: navy;
+    color: black;
 }
 
 h3 {
@@ -26,8 +26,10 @@ main {
     padding: 15px;
     display: grid;
     grid-template-columns: 100px 1fr 1fr 1fr;
+    max-height: 100px;
     grid-template-areas:
     "five one one one"
+    "five six six four"
     "five two three four";
 }
 
@@ -41,7 +43,7 @@ main {
 
 #title #eye-color {
     grid-area: two;
-    background-color: steelblue;
+    background-color: gold;
 }
 
 #title #hair-color {
@@ -51,11 +53,21 @@ main {
 
 #title #race {
     grid-area: four;
-    background-color: steelblue;
+    background-color: gold;
 }
 
 #title #image-thumb {
     grid-area: five;
     background-color: gold;
     width: 80px;
+    height: 100px;
+    object-fit: cover;
+    /* for event listener */
+    cursor: pointer;
+}
+
+#empty-div {
+    grid-area: six;
+    background-color: gold;
+    color: red;
 }
