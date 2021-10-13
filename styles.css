@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    /* background-color: black; */
 }
 
 div:nth-child(even) {
@@ -25,9 +25,10 @@ main {
 #title {
     padding: 15px;
     display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr;
     grid-template-areas:
-    "one one one five"
-    "two three four five";
+    "five one one one"
+    "five two three four";
 }
 
 #title #person-name {
@@ -53,9 +54,8 @@ main {
     background-color: steelblue;
 }
 
-#title #image-here {
+#title #image-thumb {
     grid-area: five;
-    text-align: right;
     background-color: gold;
+    width: 80px;
 }
-

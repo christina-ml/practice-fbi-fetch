@@ -30,11 +30,11 @@ fetch("https://api.fbi.gov/wanted/v1/list")
             race.textContent = `Race: ${wanted.race}` 
             title.append(race);
 
-            let imageHere = document.createElement("div");
-            imageHere.id = "image-here";
-            imageHere.textContent = `image: ${wanted.image}` 
-            title.append(imageHere);
-
+            let imageThumb = document.createElement("img");
+            imageThumb.src = wanted.images[0].large;
+            imageThumb.alt = wanted.images[0].caption;
+            imageThumb.id = "image-thumb";
+            title.append(imageThumb);
         }
     })
     .catch((err)=>{
