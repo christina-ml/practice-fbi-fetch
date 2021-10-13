@@ -11,13 +11,17 @@ fetch("https://api.fbi.gov/wanted/v1/list")
             title.textContent = `${wanted.title}`;
             mainSection.append(title);
             
-            let div = document.createElement("div");
-            div.textContent = `eyes: ${wanted.eyes} hair: ${wanted.hair}` 
-            mainSection.append(div);
+            let eyeColor = document.createElement("div");
+            eyeColor.textContent = `Eyes: ${wanted.eyes}` 
+            mainSection.append(eyeColor);
 
-            let div2 = document.createElement("div");
-            div2.textContent = `` 
-            mainSection.append(div2);
+            let hairColor = document.createElement("div");
+            hairColor.textContent = `Hair: ${wanted.hair}` 
+            mainSection.append(hairColor);
+        
+            let race = document.createElement("div");
+            race.textContent = `Race: ${wanted.race}` 
+            mainSection.append(race);
 
         }
     })
