@@ -5,8 +5,7 @@ let logo = document.createElement("img");
 logo.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/1200px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png";
 logo.alt = "FBI Logo";
 logo.id = "fbi-logo";
-
-nav.prepend(logo)
+nav.prepend(logo);
 
 let mainSection = document.querySelector("#main-section");
 fetch("https://api.fbi.gov/wanted/v1/list")
