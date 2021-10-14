@@ -1,3 +1,25 @@
+#nav {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-areas:
+    "logo header";
+    background-color: #003;
+}
+
+#fbi-logo {
+    margin-top: 0px;
+    height: 50px;
+    padding: 5px 5px; /* vertical align */
+    grid-area: logo;
+}
+
+h3 {
+    padding: 0 15px; /* vertical align */
+    color: gold;
+    font-size: 20px;
+    grid-area: header;
+}
+
 body {
     background-color: black;
 }
@@ -10,27 +32,21 @@ div:nth-child(odd) {
     color: black;
 }
 
-h3 {
-    background-color: #003;
-    padding: 20px;
-    color: gold;
-    font-size: 20px;
-}
-
 main {
     text-align: left;
 }
-
 
 #title {
     padding: 15px;
     display: grid;
     grid-template-columns: 100px 1fr 1fr 1fr;
-    max-height: 100px;
+    max-height: 140px;
     grid-template-areas:
-    "five one one one"
-    "five six six four"
-    "five two three four";
+    "image names names names"
+    "image emptydiv emptydiv emptydiv"
+    "image description description eyes"
+    "image description description hair"
+    "image race race weighs";
 }
 
 #title #person-name {
@@ -38,36 +54,51 @@ main {
     padding-bottom: 15px;
     color: gold;
     background-color: navy;
-    grid-area: one;
+    grid-area: names;
+}
+
+#title #bday-used {
+    color: gold;
+    font-size: 12px;
+}
+
+#title #description {
+    grid-area: description;
+    background-color: gold;
 }
 
 #title #eye-color {
-    grid-area: two;
+    grid-area: eyes;
     background-color: gold;
 }
 
 #title #hair-color {
-    grid-area: three;
+    grid-area: hair;
     background-color: gold;
 }
 
 #title #race {
-    grid-area: four;
+    grid-area: race;
+    background-color: gold;
+}
+
+#title #weight {
+    grid-area: weighs;
     background-color: gold;
 }
 
 #title #image-thumb {
-    grid-area: five;
+    grid-area: image;
     background-color: gold;
-    width: 80px;
-    height: 100px;
+    width: 90px;
+    height: 140px;
     object-fit: cover;
     /* for event listener */
     cursor: pointer;
 }
 
 #empty-div {
-    grid-area: six;
+    grid-area: emptydiv;
     background-color: gold;
     color: red;
 }

@@ -1,3 +1,13 @@
+let nav = document.querySelector("#nav");
+let header = document.querySelector("h3");
+
+let logo = document.createElement("img");
+logo.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Seal_of_the_Federal_Bureau_of_Investigation.svg/1200px-Seal_of_the_Federal_Bureau_of_Investigation.svg.png";
+logo.alt = "FBI Logo";
+logo.id = "fbi-logo";
+
+nav.prepend(logo)
+
 let mainSection = document.querySelector("#main-section");
 fetch("https://api.fbi.gov/wanted/v1/list")
     .then((res)=> res.json())
@@ -15,6 +25,16 @@ fetch("https://api.fbi.gov/wanted/v1/list")
             personName.textContent = `${wanted.title}`;
             title.append(personName);
 
+            let bdayUsed = document.createElement("div");
+            bdayUsed.id = "bday-used";
+            bdayUsed.textContent = `Dates of Birth Used: ${wanted.dates_of_birth_used}`;
+            personName.append(bdayUsed);
+
+            let description = document.createElement("div");
+            description.id = "description";
+            description.textContent = `Description: ${wanted.description}` 
+            title.append(description);
+
             let eyeColor = document.createElement("div");
             eyeColor.id = "eye-color";
             eyeColor.textContent = `Eyes: ${wanted.eyes}` 
@@ -30,6 +50,11 @@ fetch("https://api.fbi.gov/wanted/v1/list")
             race.textContent = `Race: ${wanted.race}` 
             title.append(race);
 
+            let weight = document.createElement("div");
+            weight.id = "weight";
+            weight.textContent = `Weight: ${wanted.weight}` 
+            title.append(weight);
+
             let imageThumb = document.createElement("img");
             imageThumb.src = wanted.images[0].large;
             imageThumb.alt = wanted.images[0].caption;
@@ -40,7 +65,7 @@ fetch("https://api.fbi.gov/wanted/v1/list")
             emptyDiv.id = "empty-div";
             title.append(emptyDiv);
 
-            /* Event listener on the picture */
+            /* Event listener on the picture. For Warnings and Rewards. */
             imageThumb.addEventListener("click", (e)=>{
                 if (wanted.warning_message === null){
                     emptyDiv.textContent = `WARNING: none`
